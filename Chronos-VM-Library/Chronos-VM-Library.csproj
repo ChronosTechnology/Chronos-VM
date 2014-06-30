@@ -7,7 +7,7 @@
     <ProjectGuid>{8E40CFF4-9742-4752-9115-E6371C9B2250}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Chronos_VM_Library</RootNamespace>
+    <RootNamespace>Chronos</RootNamespace>
     <AssemblyName>Chronos-VM-Library</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="Vector3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
