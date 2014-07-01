@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Chronos
+namespace ChronosTech.Vector
 {
     public class Vector3<T>
     {
@@ -46,7 +46,12 @@ namespace Chronos
                         (EqualityComparer<T>.Default.Equals(Y, that.Y)) && 
                         (EqualityComparer<T>.Default.Equals(Z, that.Z));
         }
-        
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         /// <summary>
         /// Computes the Cross product of two vectors. If the type of the vector does not support multiplication a 
         /// exception will be thrown at runtime.
@@ -92,6 +97,17 @@ namespace Chronos
         public static Vector3<T> operator -(Vector3<T> v1, Vector3<T> v2)
         {
             return new Vector3<T>((dynamic)v1.X - v2.X, (dynamic)v1.Y - v2.Y, (dynamic)v1.Z - v2.Z);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static Vector3<T> operator /(Vector3<T> v1, double scalar)
+        {
+            return new Vector3<T>((dynamic)v1.X / scalar, (dynamic)v1.Y / scalar, (dynamic)v1.Z / scalar); 
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Chronos
+﻿namespace ChronosTech.Vector
 {
     public class Vector2<T>
     {

@@ -1,4 +1,6 @@
 ﻿using Chronos;
+using ChronosTech;
+using ChronosTech.Vector;
 using Xunit;
 
 namespace Chronos_VM_Libray.Test
