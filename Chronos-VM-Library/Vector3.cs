@@ -1,4 +1,6 @@
-﻿namespace Chronos
+﻿using System.Collections.Generic;
+
+namespace Chronos
 {
     public class Vector3<T>
     {
@@ -24,6 +26,25 @@
             X = x;
             Y = y;
             Z = z;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Vector3<T> that = obj as Vector3<T>;
+
+            if (that == null)
+            {
+                return false;
+            }
+
+            return (EqualityComparer<T>.Default.Equals(X, that.X)) && 
+                        (EqualityComparer<T>.Default.Equals(Y, that.Y)) && 
+                        (EqualityComparer<T>.Default.Equals(Z, that.Z));
         }
 
         /// <summary>
