@@ -75,5 +75,61 @@ namespace Chronos_VM_Libray.Test
             
             Assert.True(d.Equals(e));
         }
+
+        [Fact]
+        public void EqualityOperatorTest()
+        {
+            Vector3<int> a = new Vector3<int>();
+            Vector3<int> b = new Vector3<int>(1, 0, 0);
+            Vector3<int> c = new Vector3<int>(0, 1, 0);
+
+            Assert.False(a == b);
+            Assert.True(a == a);
+
+        }
+
+        [Fact]
+        public void CrossProduct1Test()
+        {
+            Vector3<double> a = new Vector3<double>(1d,0d,0d);
+            Vector3<double> b = new Vector3<double>(0d,1d,0d);
+
+            Vector3<double> c = a*b;
+
+            Assert.Equal(c, new Vector3<double>(0,0,1));
+        }
+
+        [Fact]
+        public void CrossProduct2Test()
+        {
+            Vector3<double> a = new Vector3<double>(0d, 1d, 0d);
+            Vector3<double> b = new Vector3<double>(0d, 0d, 1d); 
+
+            Vector3<double> c = a * b;
+
+            Assert.Equal(c, new Vector3<double>(1, 0, 0));
+        }
+
+        [Fact]
+        public void CrossProduct3Test()
+        {
+            Vector3<double> a = new Vector3<double>(1d, 0d, 0d);
+            Vector3<double> b = new Vector3<double>(0d, 0d, 1d);
+
+            Vector3<double> c = a * b;
+
+            Assert.Equal(c, new Vector3<double>(0, -1, 0));
+        }
+
+        [Fact]
+        public void CrossProduct4Test()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 2.0, 3.0);
+            Vector3<double> b = new Vector3<double>(3.0, 2.0, 3.0);
+
+            Vector3<double> c = a * b;
+
+            Assert.Equal(c, new Vector3<double>(0, 6, -4));
+        }
     }
 }

@@ -46,6 +46,25 @@ namespace Chronos
                         (EqualityComparer<T>.Default.Equals(Y, that.Y)) && 
                         (EqualityComparer<T>.Default.Equals(Z, that.Z));
         }
+        
+        /// <summary>
+        /// Computes the Cross product of two vectors. If the type of the vector does not support multiplication a 
+        /// exception will be thrown at runtime.
+        /// </summary>
+        /// <param name="v1">Vector 1</param>
+        /// <param name="v2">Vector 2</param>
+        /// <returns>Cross product of the two vectors</returns>
+        public static Vector3<T> operator *(Vector3<T> v1, Vector3<T> v2)
+        {
+            return new Vector3<T>((dynamic)v1.Y * v2.Z - (dynamic)v1.Z * v2.Y, 
+                                  (dynamic)v1.Z * v2.X - (dynamic)v1.X * v2.Z , 
+                                  (dynamic)v1.X * v2.Y - (dynamic)v1.Y * v2.X);
+        }
+
+        public static Vector3<T> operator *(Vector3<T> v1, double scalar)
+        {
+            return new Vector3<T>((dynamic)v1.X * scalar, (dynamic)v1.Y * scalar, (dynamic)v1.Z * scalar);    
+        }
 
         /// <summary>
         /// Gets or sets the X component of the vector.
