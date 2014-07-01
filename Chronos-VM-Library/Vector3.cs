@@ -61,9 +61,37 @@ namespace Chronos
                                   (dynamic)v1.X * v2.Y - (dynamic)v1.Y * v2.X);
         }
 
+        /// <summary>
+        /// Computes the multiplication of a vector with a scalar value.
+        /// </summary>
+        /// <param name="v1">vector</param>
+        /// <param name="scalar">Scalar value</param>
+        /// <returns><typeparam name="Vector3">Vector</typeparam></returns>
         public static Vector3<T> operator *(Vector3<T> v1, double scalar)
         {
             return new Vector3<T>((dynamic)v1.X * scalar, (dynamic)v1.Y * scalar, (dynamic)v1.Z * scalar);    
+        }
+
+        /// <summary>
+        /// Adds two vectors.
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static Vector3<T> operator +(Vector3<T> v1, Vector3<T> v2)
+        {
+            return new Vector3<T>((dynamic)v1.X + v2.X, (dynamic)v1.Y + v2.Y, (dynamic)v1.Z + v2.Z);
+        }
+
+        /// <summary>
+        /// Subtracts two vectors.
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static Vector3<T> operator -(Vector3<T> v1, Vector3<T> v2)
+        {
+            return new Vector3<T>((dynamic)v1.X - v2.X, (dynamic)v1.Y - v2.Y, (dynamic)v1.Z - v2.Z);
         }
 
         /// <summary>

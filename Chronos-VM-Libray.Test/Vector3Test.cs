@@ -131,5 +131,38 @@ namespace Chronos_VM_Libray.Test
 
             Assert.Equal(c, new Vector3<double>(0, 6, -4));
         }
+
+        [Fact]
+        public void ScalarProductTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 2.0, 3.0);
+            
+
+            Vector3<double> c = a * 2;
+
+            Assert.Equal(c, new Vector3<double>(2, 4, 6));
+        }
+
+        [Fact]
+        public void AddTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 2.0, 3.0);
+            Vector3<double> b = new Vector3<double>(3.0, 2.0, 3.0);
+
+            Vector3<double> c = a + b;
+
+            Assert.Equal(c, new Vector3<double>(4, 4, 6));
+        }
+
+        [Fact]
+        public void SubtractTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 2.0, 3.0);
+            Vector3<double> b = new Vector3<double>(3.0, 2.0, 3.0);
+
+            Vector3<double> c = a - b;
+
+            Assert.Equal(c, new Vector3<double>(-2, 0, 0));
+        }
     }
 }
