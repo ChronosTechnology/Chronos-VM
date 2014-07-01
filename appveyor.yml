@@ -1,0 +1,1 @@
+version: $(APPVEYOR_REPO_BRANCH)-{version}
