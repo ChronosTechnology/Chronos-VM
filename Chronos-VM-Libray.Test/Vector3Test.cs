@@ -1,5 +1,4 @@
-﻿using Chronos;
-using ChronosTech;
+﻿using ChronosTech;
 using ChronosTech.Vector;
 using Xunit;
 
