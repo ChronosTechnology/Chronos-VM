@@ -165,5 +165,44 @@ namespace Chronos_VM_Libray.Test
 
             Assert.Equal(c, new Vector3<double>(-2, 0, 0));
         }
+
+        [Fact]
+        public void InnerProductTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 3.0, -5.0);
+            Vector3<double> b = new Vector3<double>(4.0, -2.0, -1.0);
+
+            double d = Vector3<double>.Dot(a, b);
+
+            Assert.Equal(3.0, d);
+        }
+
+        [Fact]
+        public void InnerProductPropertyTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 3.0, -5.0);
+            Vector3<double> b = new Vector3<double>(4.0, -2.0, -1.0);
+            Vector3<double> c = new Vector3<double>(1.0, 2.0, 3.0);
+            double r = 2.0;
+
+            // Commutative
+            double d = Vector3<double>.Dot(a, b);
+            double e = Vector3<double>.Dot(b, a);
+
+            Assert.Equal(d, e);
+
+            // Distributive over vector addition
+            d = Vector3<double>.Dot(a, b + c);
+            e = Vector3<double>.Dot(a, b) + Vector3<double>.Dot(a, c);
+
+            Assert.Equal(d, e);
+
+            // Bilinear
+
+            d = Vector3<double>.Dot(a, ((b*r) + c));
+            e = r*Vector3<double>.Dot(a, b) + Vector3<double>.Dot(a, c);
+
+            Assert.Equal(d,e);
+        }
     }
 }

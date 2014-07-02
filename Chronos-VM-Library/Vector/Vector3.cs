@@ -100,7 +100,7 @@ namespace ChronosTech.Vector
         }
 
         /// <summary>
-        /// 
+        /// Divides the vector by a scalar value
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
@@ -108,6 +108,17 @@ namespace ChronosTech.Vector
         public static Vector3<T> operator /(Vector3<T> v1, double scalar)
         {
             return new Vector3<T>((dynamic)v1.X / scalar, (dynamic)v1.Y / scalar, (dynamic)v1.Z / scalar); 
+        }
+
+        /// <summary>
+        /// Computes the inner product of two vectors.
+        /// </summary>
+        /// <param name="vector1"></param>
+        /// <param name="vector2"></param>
+        /// <returns></returns>
+        public static double Dot(Vector3<T> vector1, Vector3<T> vector2)
+        {
+            return (((dynamic) vector1.X*vector2.X) + ((dynamic) vector1.Y*vector2.Y) + ((dynamic) vector1.Z*vector2.Z));
         }
 
         /// <summary>
