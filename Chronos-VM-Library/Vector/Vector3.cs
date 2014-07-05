@@ -132,6 +132,15 @@ namespace ChronosTech.Vector
         }
 
         /// <summary>
+        /// Return the normalized vector.
+        /// </summary>
+        /// <returns>Normalized vector.</returns>
+        public Vector3<T> Normalize()
+        {
+            return this / Magnitude();
+        }
+
+        /// <summary>
         /// Gets or sets the X component of the vector.
         /// </summary>
         public T X { get; set; }

@@ -1,4 +1,5 @@
-﻿using ChronosTech.Vector;
+﻿using System;
+using ChronosTech.Vector;
 using Xunit;
 
 namespace Chronos_VM_Libray.Test
@@ -215,6 +216,17 @@ namespace Chronos_VM_Libray.Test
 
             a = new Vector3<double>(1,1,1);
             Assert.Equal(1.7320508075688772935274463415058723, a.Magnitude());
+        }
+
+        [Fact]
+        public void NormalizeTest()
+        {
+            Vector3<double> a = new Vector3<double>(1, 1, 1).Normalize();
+            Assert.Equal(new Vector3<double>(1 / Math.Sqrt(3), 1 / Math.Sqrt(3), 1 / Math.Sqrt(3)), a);
+
+            a = new Vector3<double>(4, -1, 5).Normalize();
+            Vector3<double> b = new Vector3<double>(2*Math.Sqrt(2.0/21.0), -(1/Math.Sqrt(42)), 5/Math.Sqrt(42));
+            Assert.Equal(b, a);
         }
     }
 }
