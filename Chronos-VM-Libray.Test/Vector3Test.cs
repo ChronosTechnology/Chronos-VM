@@ -1,5 +1,4 @@
-﻿using ChronosTech;
-using ChronosTech.Vector;
+﻿using ChronosTech.Vector;
 using Xunit;
 
 namespace Chronos_VM_Libray.Test
@@ -203,6 +202,19 @@ namespace Chronos_VM_Libray.Test
             e = r*Vector3<double>.Dot(a, b) + Vector3<double>.Dot(a, c);
 
             Assert.Equal(d,e);
+        }
+
+        [Fact]
+        public void MagnitudeTest()
+        {
+            Vector3<double> a = new Vector3<double>(1.0, 2.0, 3.0);
+            Assert.Equal(3.7416573867739413855837487323165493, a.Magnitude());
+
+            a = new Vector3<double>(0,0,0);
+            Assert.Equal(0, a.Magnitude());
+
+            a = new Vector3<double>(1,1,1);
+            Assert.Equal(1.7320508075688772935274463415058723, a.Magnitude());
         }
     }
 }

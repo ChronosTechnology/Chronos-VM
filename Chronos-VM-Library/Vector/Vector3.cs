@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ChronosTech.Vector
 {
@@ -119,6 +120,15 @@ namespace ChronosTech.Vector
         public static double Dot(Vector3<T> vector1, Vector3<T> vector2)
         {
             return (((dynamic) vector1.X*vector2.X) + ((dynamic) vector1.Y*vector2.Y) + ((dynamic) vector1.Z*vector2.Z));
+        }
+
+        /// <summary>
+        /// Returns the magnitude of the vector. Also called the length of the vector. 
+        /// </summary>
+        /// <returns>Double representing the length of the vector.</returns>
+        public double Magnitude()
+        {
+            return Math.Sqrt(Dot(this, this));
         }
 
         /// <summary>
